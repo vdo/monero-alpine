@@ -1,0 +1,11 @@
+version: '3.4'
+services:
+  monerod:
+    image: 'vdo1138/monero-alpine:latest'
+    ports:
+      - '18080:18080'
+      - '18081:18081'
+    volumes:
+      - 'monero_data:/root/.bitmonero'
+volumes:
+  monero_data: {}
