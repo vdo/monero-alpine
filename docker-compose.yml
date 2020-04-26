@@ -1,11 +1,12 @@
-version: '3.4'
+version: "3.4"
 services:
   monerod:
-    image: 'vdo1138/monero-alpine:latest'
+    image: "vdo1138/monero-alpine:latest"
+    command: "--p2p-bind-ip=0.0.0.0 --p2p-bind-port=18080 --rpc-bind-ip=0.0.0.0 --rpc-bind-port=18081 --non-interactive --confirm-external-bind --public-node"
     ports:
-      - '18080:18080'
-      - '18081:18081'
+      - "18080:18080"
+      - "18081:18081"
     volumes:
-      - 'monero_data:/root/.bitmonero'
+      - "monero_data:/root/.bitmonero"
 volumes:
   monero_data: {}
